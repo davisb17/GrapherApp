@@ -204,7 +204,7 @@ public class Expression
  
     public static void main(String[] args)
     {
-	/*
+	long start=System.nanoTime();
 	for (int i=1;i<10000;i++)
 	{
 	    String expr="18*(sin(x^2))+arcsin1*x+sqrt(lnx)";
@@ -213,7 +213,9 @@ public class Expression
 	    if (i%100==0)
 		System.out.println(i);
 	}
-	*/
+	long end=System.nanoTime();
+	System.out.println("Seconds: "+(end-start)/Math.pow(10,9));
+	
 	Scanner sc=new Scanner(System.in);
 	
 	while (sc.hasNextLine())
