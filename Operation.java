@@ -1,5 +1,25 @@
-public class Operation implements Term
+public class Operation
 {
+    static final int NUMBER=0;
+    
+    static final int SIN=1;
+    static final int ARCSIN=2;
+    static final int COS=3;
+    static final int ARCCOS=4;
+    static final int TAN=5;
+    static final int ARCTAN=6;
+    static final int LOG=7;
+    static final int LN=8;
+    static final int SQRT=9;
+    
+    static final int POW=10;
+    
+    static final int MULTIPLY=11;
+    static final int DIVIDE=12;
+    
+    static final int ADD=13;
+    static final int SUBTRACT=14;
+    
     static Operation SIN_OP=new Operation("sin");
     static Operation ARCSIN_OP=new Operation("arcsin");
     static Operation COS_OP=new Operation("cos");
@@ -44,12 +64,6 @@ public class Operation implements Term
 	return id;
     }
     
-    public int getType()
-    {
-	if (id>=SIN && id<=SQRT) return UNARY_OPERATION;
-	else return BINARY_OPERATION;
-    }
-    
     public String toString()
     {
 	if (id==SIN) return "sin";
@@ -69,6 +83,7 @@ public class Operation implements Term
 	else return "WEIRD";
     }
     
+    @Override
     public boolean equals(Object obj) {
 	
 	if (this == obj)
